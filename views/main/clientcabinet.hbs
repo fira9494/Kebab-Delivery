@@ -1,0 +1,38 @@
+<div class="container">
+  <nav>
+    <div class="nav-wrapper  teal">
+      <div class="logo"><a href="/main" class="brand-logo">Delivery-Kebab</a></div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <div>Hello {{name}}</div>
+        </li>
+        <li><a class="waves-effect waves-light btn" href="/main/clientcabinet">Cabinet</a></li>
+        <li><a class="waves-effect waves-light btn" href="/main/logout">LogOut</a></li>
+        <li><a class="waves-effect waves-light btn" href="/main">home</a></li>
+      </ul>
+  </nav>
+</div>
+
+<div class="main-cour-contain">
+
+  <div class="available-orders container">
+    <div class="">
+      <h4>My orders</h4>
+    </div>
+    {{#each orders}}
+
+    <div class="orders">
+      <form id="{{id}}" action="/main/delivered/{{id}}" method="POST">
+        <div>{{name}}</div>
+        <img class="img" src="{{image}}"></img>
+        <div>Price: {{price}}</div>
+        <div>Discount: {{discount}}</div>
+        <div>NewPrice: {{newPrice}}</div>
+        <div class="formBtns"><button class="waves-effect waves-light btn-small" type="submit">Delivered</button></div>
+      </form>
+    </div>
+
+    {{/each}}
+  </div>
+</div>
+</div>

@@ -1,0 +1,40 @@
+{
+  "name": "contract-project-delivery",
+  "version": "1.0.0",
+  "description": "## Звонок от заказчика",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon server.js --ignore sessions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor11555/contract-project-delivery.git"
+  },
+  "keywords": [],
+  "author": "Victor, Bogdan, Fira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victor11555/contract-project-delivery/issues"
+  },
+  "homepage": "https://github.com/victor11555/contract-project-delivery#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "http-errors": "^1.8.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.15",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
+    "session-file-store": "^1.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

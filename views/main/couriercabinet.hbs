@@ -1,0 +1,57 @@
+<div class="container">
+  <nav>
+    <div class="nav-wrapper  teal">
+      <div class="logo"><a href="/main" class="brand-logo">Delivery-Kebab</a></div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <div>Hello {{name}}</div>
+        </li>
+        <li><a class="waves-effect waves-light btn" href="/main/logout">LogOut</a></li>
+        <li><a class="waves-effect waves-light btn" href="/main">home</a></li>
+      </ul>
+  </nav>
+</div>
+<div class="main-cour-contain">
+  <div class="container log-cur">
+    <form action="/main/newOrder" method="post">
+      <div class="input-field col s6">
+        <select name="name">
+          <option disabled>Choose your dish</option>
+          <option value="burger">burger</option>
+          <option value="pizza">pizza</option>
+          <option value="sushi">sushi</option>
+          <option value="soup">soup</option>
+          <option value="kebab">kebab</option>
+          <option value="doner">doner</option>
+        </select>
+      </div>
+      <div>
+        <label>Price:</label>
+        <input type="number" name="price" />
+      </div>
+      <div>
+        <label>Discount:</label>
+        <input type="number" name="discount" />
+      </div>
+      <div>
+        <button class="waves-effect waves-light btn" type="submit">Publish</button>
+      </div>
+    </form>
+  </div>
+</div>
+{{!-- клиентский кабинет --}}
+<div class="available-orders container">
+  <div class="">
+    <h4>My orders</h4>
+  </div>
+  {{#each orders}}
+  <div class="orders">
+    <form name="orderToDelForm" action="/main/delivered/{{id}}" method="POST">
+      <img class="img" src="{{image}}"></img>
+      <div>Price: {{price}}</div>
+      <div>Discount: {{discount}}</div>
+      <div>NewPrice: {{newPrice}}</div>
+    </form>
+  </div>
+  {{/each}}
+</div>

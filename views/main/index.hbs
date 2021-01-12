@@ -1,0 +1,66 @@
+<div class="container">
+  <nav>
+    <div class="nav-wrapper  teal">
+      <div class="logo"><a href="/main" class="brand-logo">Delivery-Kebab</a></div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{!-- Кабинет --}}
+        {{#if isSession}}
+        <li>
+          <a class="waves-effect waves-light btn" href="/main/cabinet">Cabinet</a>
+        </li>
+        {{else}}
+        {{!-- Вход --}}
+        <li>
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">LogIn</a>
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <div>
+                <a class="waves-effect waves-light btn" href="/main/loginclient">Client</a>
+                <a class="waves-effect waves-light btn" href="/main/logincourier">Courier</a>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Exit</a>
+            </div>
+          </div>
+        </li>
+
+        {{!-- Регистрация --}}
+        <li>
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal2">SignUp</a>
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <div><a class="waves-effect waves-light btn" href="/main/signupclient">Client</a>
+                <a class="waves-effect waves-light btn" href="/main/signupcourier">Courier</a>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Exit</a>
+            </div>
+          </div>
+        </li>
+        {{/if}}
+
+      </ul>
+    </div>
+
+  </nav>
+</div>
+
+<div class="available-orders container">
+  <div class="">
+    <h4>Availible orders</h4>
+  </div>
+  {{#each orders}}
+  <div class="orders">
+    <form id="{{id}}" name="orderForm" action="/main/redeem/{{id}}" method="POST">
+      <div>{{name}}</div>
+      <img class="img" src="{{image}}"></img>
+      <div>Price: {{price}}</div>
+      <div>Discount: {{discount}}</div>
+      <div>NewPrice: {{newPrice}}</div>
+      <div class="formBtns"><button class="waves-effect waves-light btn-small" type="submit">Redeem</button></div>
+    </form>
+  </div>
+  {{/each}}
+</div>

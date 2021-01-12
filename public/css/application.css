@@ -1,0 +1,9 @@
+.container-sign-up-courier{
+  display: flex;
+  background-color:#d9f1ef ;
+  margin-top: 10%;
+}
+
+.row{
+  margin-left: auto;
+}
